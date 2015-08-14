@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @project.image %>
+</p>
+
+<p>
+  <strong>Punchline:</strong>
+  <%= @project.punchline %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @project.owner_id %>
+</p>
+
+<p>
+  <strong>Assignee:</strong>
+  <%= @project.assignee_id %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @project.parent_id %>
+</p>
+
+<p>
+  <strong>Difficulity:</strong>
+  <%= @project.difficulity %>
+</p>
+
+<% if !@project.image.file.nil? %>
+    <img src="<%= @project.image.url %>" height="150px">
+<% end %>
+<h3>Links</h3>
+<% @project.links.each do |link| %>
+    <%= link_to link.url do %>
+        <%= link.url %>
+    <% end %>
+    <br>
+    <small><%= link.description %></small>
+<% end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

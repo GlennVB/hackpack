@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyString
+  punchline: MyString
+  description: MyText
+  status: 1
+  owner_id: 1
+  assignee_id: 1
+  parent_id: 1
+  difficulity: 1
+
+two:
+  name: MyString
+  image: MyString
+  punchline: MyString
+  description: MyText
+  status: 1
+  owner_id: 1
+  assignee_id: 1
+  parent_id: 1
+  difficulity: 1
