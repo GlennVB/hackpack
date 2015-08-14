@@ -22,10 +22,22 @@
     </div>
     <!-- /.container-fluid -->
   </nav>
+  <div class="col-md-6">
+    <div class="panel" ng-show="parentProject != undefined">
+      <div class="panel-heading">
+        <h2>
+          <a ng-click="loadProject(parentProject)">
+            {{parentProject.name}}
+          </a>
+        </h2>
+        <small>{{parentProject.punchline}}</small>
+      </div>
+      <div class="panel-body">
 
-  <div class="col-md-4">
+      </div>
+    </div>
     <div class="list-group">
-      <a href="#" class="list-group-item" ng-class="currentProject == project" ng-repeat="project in projects" ng-click="loadProject(project)">
+      <a href="#" class="list-group-item" ng-class="currentProject == project" ng-repeat="project in menuProjects" ng-click="loadProject(project)">
         <h4 class="list-group-item-heading">
           {{project.name}}
           <small class="pull-right">{{project.status}}</small>
@@ -35,7 +47,7 @@
       </a>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-6">
     <div class="panel" ng-show="currentProject != undefined">
       <div class="panel-heading">
         <h2>{{currentProject.name}}</h2>
@@ -45,5 +57,18 @@
 
       </div>
     </div>
+    <div class="list-group" ngshow="currentProject != undefined">
+      <a href="#" class="list-group-item" ng-class="currentProject == project" ng-repeat="project in currentProject.children" ng-click="loadProject(project)">
+        <h4 class="list-group-item-heading">
+          {{project.name}}
+          <small class="pull-right">{{project.status}}</small>
+        </h4>
+
+        <p class="list-group-item-text">{{project.punchline}}</p>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-6">
+
   </div>
 </div>

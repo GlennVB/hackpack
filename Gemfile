@@ -45,3 +45,4 @@ end
 
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'devise'
+gem 'faker'
